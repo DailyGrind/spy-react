@@ -4,7 +4,8 @@
   "description": "react application tool",
   "main": "index.js",
   "scripts": {
-    "test": "ava ./test/test-*.js"
+    "test": "ava ./test/test-*.js",
+    "dev": "./node_modules/.bin/webpack-dev-server  --env=development --config ./webpack.config.babel.js",
   },
   "ava": {
     "require": "babel-register",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "ava": "^0.18.2",
     "babel": "^6.23.0",
+    "babel-loader": "^6.3.2",
     "babel-preset-env": "^1.1.8",
     "babel-preset-react": "^6.23.0",
     "react": "^15.4.2",
