@@ -1,0 +1,37 @@
+{
+  "name": "spy",
+  "version": "0.0.0",
+  "description": "react application tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava ./test/test-*.js"
+  },
+  "ava": {
+    "require": "babel-register",
+    "modules": false,
+    "babel": "inherit"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Kayla Fitzsimmons",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel": "^6.23.0",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-react": "^6.23.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  }
+}
