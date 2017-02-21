@@ -1,7 +1,8 @@
 import path from "path"
+import HtmlWebpackPlugin from "html-webpack-plugin"
 
-const PATHS = {
-  src: path.join(__dirname, "./dev/"),
+const paths = {
+  dev: path.join(__dirname, "/dev"),
 }
 
 export default () => ({
@@ -10,7 +11,7 @@ export default () => ({
 			"babel-polyfill",
 			"react-hot-loader/patch",
 			"webpack-dev-server/client?http://localhost:8080",
-			path.join(PATHS.src, "index.js")
+			paths.dev + "/index.js"
 		],
 		"vendor": [ "react", "react-dom" ]
   },
@@ -21,9 +22,6 @@ export default () => ({
   devtool: "eval-source-map",
   plugins: [],
   resolve: {
-    alias: {
-      src: PATHS.src,
-    },
     extensions: [
       "*",
       ".js"
@@ -35,19 +33,23 @@ export default () => ({
         test: /\.(js|jsx)$/,
         loader: "babel-loader",
         exclude: /node_modules/,
-        include: PATHS.src,
+        include: paths.dev,
         options: {
           babelrc: false,
           presets: [
-            [
-							"env", {  modules: false} ],
+            [ "env", {  modules: false } ],
 							"react"
           ],
-          plugins: []
+					plugins: [ "transform-decorators-legacy", "transform-decorators" ]
         },
       }
-    ],
+    ]
   },
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: paths.dev + "/template.ejs"
+		})
+	],
   node: {
     fs: "empty"
   }
