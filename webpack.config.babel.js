@@ -1,5 +1,6 @@
 import path from "path"
 import HtmlWebpackPlugin from "html-webpack-plugin"
+const FlowWebpackPlugin = require('flow-webpack-plugin')
 
 const paths = {
   dev: path.join(__dirname, "/dev"),
@@ -20,7 +21,6 @@ export default () => ({
     filename: "[name].js"
   },
   devtool: "eval-source-map",
-  plugins: [],
   resolve: {
     extensions: [
       "*",
@@ -40,18 +40,21 @@ export default () => ({
         options: {
           babelrc: false,
           presets: [
-            [ "env", {  modules: false } ],
-							"react"
-          ],
-					plugins: [ "transform-decorators-legacy", "transform-decorators" ]
-        },
+            [ "env", { "targets": { "safari": 10 },
+                       "modules": false } ],
+							"react",
+              "flow"
+            ],
+            plugins: [ "transform-decorators-legacy" ]
+          },
       }
     ]
   },
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: paths.dev + "/template.ejs"
-		})
+		}),
+    new FlowWebpackPlugin()
 	],
   devServer: {
     headers:{
