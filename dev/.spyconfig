@@ -1,0 +1,5 @@
+{
+	"websocket": {
+		"url": "ws://localhost:8082"
+	}
+}

@@ -1,28 +1,30 @@
 import React, { Component } from "react";
-import spy from "./../lib";
+import { spy } from "./../lib";
 
-@spy({ ws: false, rcl: false })
+@spy
 class Button extends Component {
 
 	constructor(props){
 		super(props)
 	}
+	componentDidMount() {
 
-	shouldComponentUpdate(nextProps) {
-		return this.props !== nextProps;
 	}
+	// shouldComponentUpdate(nextProps) {
+	// 	return this.props !== nextProps;
+	// }
 
-	onHover(e) {
-		alert('hover!')
+	handleDoubleClick(e) {
+		alert('double click!')
 	}
 
 	render() {
-		let button = <button onClick={ this.props.onClick } onDoubleClick={ this.onHover }>
-								click! { this.props.count }
-							</button>
+
 		return <div>
 						{ this.props.children }
-						{button}
+						<button onClick={ this.props.onClick } onDoubleClick={ this.handleDoubleClick }>
+												click! { this.props.count }
+											</button>
 					</div>;
 	}
 }
