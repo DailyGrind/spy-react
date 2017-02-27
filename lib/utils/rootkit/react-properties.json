@@ -1,0 +1,23 @@
+{
+	"methods": [
+  "constructor",
+  "componentWillMount",
+  "componentDidMount",
+  "componentWillReceiveProps",
+  "shouldComponentUpdate",
+  "componentWillUpdate",
+  "render",
+  "componentDidUpdate",
+  "componentWillUnmount"
+],
+
+"mount": [ "constructor", "componentWillMount", "componentDidMount", "render" ],
+
+"update": [ "componentWillReceiveProps", "shouldComponentUpdate", "componentWillUpdate", "render", "componentDidUpdate" ],
+
+"unmount": [ "componentWillUnmount" ],
+
+"class": [ "defaultProps", "displayName", "propTypes" ],
+
+"instance": [ "props", "state" ]
+}
