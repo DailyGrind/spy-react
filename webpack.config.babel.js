@@ -42,10 +42,13 @@ export default () => ({
           presets: [
             [ "env", { "targets": { "safari": 10 },
                        "modules": false } ],
-							"react",
-              "flow"
+							"react"
             ],
-            plugins: [ "transform-decorators-legacy" ]
+            plugins: [
+                "transform-decorators-legacy",
+                "transform-class-properties",
+                "transform-runtime"
+              ]
           },
       }
     ]
