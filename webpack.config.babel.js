@@ -27,7 +27,10 @@ export default () => ({
       ".js"
     ],
     alias: {
-      lib: "./lib/"
+      lib: path.resolve(__dirname, "lib"),
+      utils: path.resolve(__dirname, "lib/utils"),
+      components: path.resolve(__dirname, "lib/components"),
+      client: path.resolve(__dirname, "lib/client")
     }
   },
   module: {

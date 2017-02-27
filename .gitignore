@@ -2,3 +2,4 @@ node_modules
 index.md
 */index.md
 dist
+npm-debug.log
