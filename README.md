@@ -4,7 +4,7 @@
 
 Spy is a monitoring library for react applications.
 
-## Features
+## Planned Features
 * lifecycle event monitoring
 * custom methods triggered by dom events
 * heat map
