@@ -31,24 +31,3 @@ Monitor all instances of a react component by adding a `@spy` annotation.
     ...
   }
 ```
-
-## example usage
-
-&#128679; modules are unpublished
-g
-1. install spy-node
-``` js
-  npm install spy-node -g
-```
-
-2. install spy-react
-``` js
-  npm install spy-react --save-dev
-```
-3. run spy-node default port is 8082
-``` js
-spy-node
-```
-4. add the spyOpts decorator to the root of your application
-5. add spy decorators to class components you to monitor
-6. run your application in development mode
