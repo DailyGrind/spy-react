@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { spy } from "./../lib";
 
-@spy
+
 class Button extends Component {
 
 	constructor(props){

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { spy, spyOpts } from "./../lib";
 import { Button } from "./button";
+import spyconfig from "./spyconfig.js";
 
-@spyOpts({ spynode: { url: "ws://localhost:8082", events: { ws: true, rlc: { implemented: true, all: false }} }, })
+@spyOpts(spyconfig)
+@spy
 export class App extends Component {
 	constructor(props){
 		super(props);
@@ -10,7 +12,6 @@ export class App extends Component {
 			event: 0
 		}
 	}
-
 
 	handleClick(){
 		this.setState({
