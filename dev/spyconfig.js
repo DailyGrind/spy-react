@@ -9,12 +9,7 @@ export default {
 			}
 		}
 	},
-	children: {
-		target_all: true,
-		targets: [{
-			type: "",
-			limit_spies: "first ten buttons"
-		}],
-		shared_config: true
+	nodes: {
+		all: true
 	}
 }
